@@ -1,0 +1,23 @@
+<%- include('../partials/header'); %>
+<!-- kondisi apakah data yang dikirim ada atau tidak -->
+<% if (entries.length) { %>
+<!-- melukakan iterasi terhada dapat entries -->
+<% entries.forEach(function(entry){ %>
+<div class="card">
+    <!-- pemanggilan data image, title, caption dan seller -->
+    <img class="card-img-top" src="<%= entry.image %> " alt="">
+    <div class="card-body">
+        <h4 class="card-title"><%= entry.title %> </h4>
+        <p class="card-text"><%= entry.caption %> </p>
+        <div class="text-muted float-right">
+            <i class="fa fa-user" aria-hidden="true">
+                Uploaded by,&nbsp;<%= entry.seller %>
+            </i>
+        </div>
+    </div>
+</div>
+<% }) %>
+<% } else { %>
+    <p>Tidak ada Data yang ditemukan !</p>
+<% } %>
+<%- include('../partials/footer'); %>
