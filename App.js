@@ -1,11 +1,23 @@
 const express = require('express');
+const sequelize = require('./configs/sequelize');
+const bodyParser = require('body-parser');
 
 const app = express();
+const User = require('./models/User');
 const path = require("path");
+app.use(bodyParser.urlencoded({
+    extended: true
+  }));
 
 app.use(express.static('public'));
 app.set("views", path.resolve(__dirname, "views"));
 app.set('view engine', 'ejs');
+
+// Routes
+const UserRoutes = require('./routes/User');
+
+
+app.use('/user', UserRoutes);
 
 app.get('/', (req, res) => {
     //entries merupakan array yang nanti akan dikirimkan datanya ke route '/'
@@ -40,5 +52,6 @@ app.get('/', (req, res) => {
 });
 
 app.listen(3000, () => {
+    sequelize.sync();
     console.log('Server Dijalankan');
 });
