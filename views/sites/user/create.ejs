@@ -1,0 +1,37 @@
+<%- include('../../partials/header'); %>
+<div class="card">
+  <div class="card-body">
+    <form action="/user/create" method="post">
+      <div class="form-group">
+        <label for="name">Nama Lengkap</label>
+        <input type="text" class="form-control" name="name" id="" placeholder="">
+      </div>
+      <div class="form-group">
+        <label for="birthday">Tanggal Lahir</label>
+        <input type="date" class="form-control" name="birthday" id="" placeholder="">
+      </div>
+      <label for="">Jenis Kelamin</label>
+      <div class="form-check">
+        <label class="form-check-label">
+          <input type="radio" class="form-check-input" name="gender" id="" value="male" checked>
+          Laki - Laki
+        </label>
+      </div>
+      <div class="form-check">
+        <label class="form-check-label">
+          <input type="radio" class="form-check-input" name="gender" id="" value="female" checked>
+          Perempuan
+        </label>
+      </div>
+      <div class="form-group">
+        <label for="address">Alamat</label>
+        <input type="text" class="form-control" name="address" id="" placeholder="">
+      </div>
+      <button type="submit" class="btn btn-primary"> Save </button>
+    </form>
+  </div>
+</div>
+<% if (data) { %>
+  <h3>Nama Lengkap : <%= data.name %> </h3>
+<% } %>
+<%- include('../../partials/footer'); %>
