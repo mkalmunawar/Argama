@@ -4,20 +4,24 @@ const bodyParser = require('body-parser');
 
 const app = express();
 const User = require('./models/User');
+const post = require('./models/post');
+const kost = require('./models/kost');
 const path = require("path");
+
+// Define Routes
+const UserRoutes = require('./routes/user');
+const PostRoutes = require('./routes/post');
+
 app.use(bodyParser.urlencoded({
     extended: true
-  }));
-
+}));
 app.use(express.static('public'));
 app.set("views", path.resolve(__dirname, "views"));
 app.set('view engine', 'ejs');
 
 // Routes
-const UserRoutes = require('./routes/user');
-
-
 app.use('/user', UserRoutes);
+app.use('/post', PostRoutes);
 
 app.get('/', (req, res) => {
     //entries merupakan array yang nanti akan dikirimkan datanya ke route '/'

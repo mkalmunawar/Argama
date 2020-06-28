@@ -1,0 +1,50 @@
+<%- include('../../partials/header'); %>
+<form action="/post/store" method="post">
+    <div class="card">
+        <div class="card-header">
+            <div class="card-title">
+                <h4>Iklan</h4>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+                <label for="name">Judul</label>
+                <input type="text" class="form-control" name="name" id="" placeholder="">
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <div class="card-title">
+                <h4>Deskripsi Iklan</h4>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+                <label for="location">Lokasi</label>
+                <input type="text" class="form-control" name="location" id="" placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="price">Harga</label>
+                <input type="number" class="form-control" name="price" id="" placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="room_type">Jenis Kost</label>
+                <input type="text" class="form-control" name="room_type" id="" placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="facilities">Fasilitas</label>
+                <textarea class="form-control" name="facilities" id="" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="variety">Tipe Kost</label>
+              <select class="form-control" name="variety" id="">
+                <option>Kamar Mandi Dalam</option>
+                <option>Kamar Mandi Luar</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary float-right">Simpan Iklan</button>
+        </div>
+    </div>
+</form>
+<%- include('../../partials/footer'); %>

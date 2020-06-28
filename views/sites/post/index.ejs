@@ -1,0 +1,29 @@
+<%- include('../../partials/header'); %>
+<div class="card">
+    <div class="card-body">
+        <a name="" id="" class="btn btn-primary" href="/post/create" role="button">Tambah Iklan</a>
+        <% 
+            let no = 1;
+        %>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Nama</th>
+                </tr>
+            </thead>
+            <tbody>
+            <% if(data) { %>
+                <% data.forEach((post) => { %>
+                <tr>
+                    <td><%= no++ %> </td>
+                    <td><%= post.name %> </td>
+                    <td><a class="btn btn-primary" href="/user/show/<%= post.id %>" role="button">Detail</a></td>
+                </tr>
+                <% }) %>
+            <% } %>
+            </tbody>
+        </table>
+    </div>
+</div>
+<%- include('../../partials/footer'); %>
