@@ -8,4 +8,4 @@ const sequelize = new Sequelize('argama', 'root', '',
         dialect: 'mysql'
     });
 
-    module.exports = sequelize;
+module.exports = sequelize;

@@ -14,7 +14,7 @@ app.set("views", path.resolve(__dirname, "views"));
 app.set('view engine', 'ejs');
 
 // Routes
-const UserRoutes = require('./routes/User');
+const UserRoutes = require('./routes/user');
 
 
 app.use('/user', UserRoutes);

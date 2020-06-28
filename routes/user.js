@@ -35,4 +35,19 @@ router.get('/find', (req, res) => {
         })
 })
 
+router.get('/show/:id', (request, response) => {
+    let id = request.params.id;
+    User.findAll({
+        where: {
+            id: id,
+        }
+    }).then((user) => {
+        let data = user;
+        response.render('sites/user/show', { data: data });
+    })
+        .catch((error) => {
+            console.log(error);
+        });
+});
+
 module.exports = router;

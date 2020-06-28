@@ -1,0 +1,39 @@
+<%- include('../../partials/header'); %>
+<div class="card">
+  <div class="card-body">
+    <% if(data) { %>
+      <% data.forEach((user) => { %>
+      <div class="form-group">
+        <label for="name">Nama Lengkap</label>
+        <input type="text" class="form-control" name="name" id="" placeholder="" value="<%= user.name %>">
+      </div>
+      <div class="form-group">
+        <label for="birthday">Tanggal Lahir</label>
+        <input type="date" class="form-control" name="birthday" id="" placeholder="" value="<%= user.birthday %>">
+      </div>
+      <label for="">Jenis Kelamin</label>
+      <div class="form-check">
+        <label class="form-check-label">
+          <input type="radio" class="form-check-input" name="gender" id="" value="male" checked>
+          Laki - Laki
+        </label>
+      </div>
+      <div class="form-check">
+        <label class="form-check-label">
+          <input type="radio" class="form-check-input" name="gender" id="" value="female" checked>
+          Perempuan
+        </label>
+      </div>
+      <div class="form-group">
+        <label for="address">Alamat</label>
+        <input type="text" class="form-control" name="address" id="" placeholder="" value="<%= user.address %>">
+      </div>
+      <button type="submit" class="btn btn-primary"> Save </button>
+      <% }) %>
+    <% } %>
+  </div>
+</div>
+<% if (data) { %>
+  <h3>Nama Lengkap : <%= data.name %> </h3>
+<% } %>
+<%- include('../../partials/footer'); %>
