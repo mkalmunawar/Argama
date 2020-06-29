@@ -31,7 +31,7 @@ router.post('/store', (req, res) => {
             console.log(error);
         });
 
-        res.render('sites/post/index');
+        res.render('sites/post/index', { data: null });
     })
         .catch((error) => {
             console.log(error);
