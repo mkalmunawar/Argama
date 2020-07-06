@@ -1,7 +1,6 @@
 <%- include('../../partials/header'); %>
 <div class="card">
     <div class="card-body">
-        <a name="" id="" class="btn btn-primary" href="/user/create" role="button">Tambah User</a>
         <% 
             let no = 1;
         %>
@@ -10,6 +9,7 @@
                 <tr>
                     <th>No</th>
                     <th>Nama</th>
+                    <th>Email</th>
                     <th>Tanggal Lahir</th>
                     <th>Jenis Kelamin</th>
                     <th>Alamat</th>
@@ -22,6 +22,7 @@
                 <tr>
                     <td><%= no++ %> </td>
                     <td><%= user.name %> </td>
+                    <td><%= user.email %> </td>
                     <td><%= user.birthday %> </td>
                     <td><%= user.gender %> </td>
                     <td><%= user.address %> </td>
@@ -32,5 +33,5 @@
             </tbody>
         </table>
     </div>
-</div>
+</div>s
 <%- include('../../partials/footer'); %>

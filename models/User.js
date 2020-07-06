@@ -13,7 +13,9 @@ User.init(
             autoIncrement: true
         },
         name: Sequelize.STRING,
-        birthday: Sequelize.DATE,
+        email: Sequelize.STRING,
+        password: Sequelize.STRING,
+        birthday: Sequelize.DATEONLY,
         gender: Sequelize.STRING,
         address: Sequelize.TEXT,
     },

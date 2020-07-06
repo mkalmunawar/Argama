@@ -1,17 +1,18 @@
-const express = require('express')
+const express = require('express');
 const router = express.Router();
+const bycrypt = require('bcryptjs');
+
+var salt = bycrypt.genSaltSync(10);
 
 const User = require('../models/User');
-// create url
-router.get('/create', (req, res) => {
-    res.render('sites/user/create', { data: null });
-});
 
 // insert
 router.post('/create', (req, res) => {
     // variable as field on table
     let data = {
         name: req.body.name,
+        email: req.body.email,
+        password: bycrypt.hashSync(req.body.password, salt),
         birthday: req.body.birthday,
         gender: req.body.gender,
         address: req.body.address,
