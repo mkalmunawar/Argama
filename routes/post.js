@@ -3,6 +3,7 @@ const router = express.Router();
 
 const post = require('../models/post');
 const kost = require('../models/kost');
+const photo = require('../models/photo');
 
 // create url
 router.get('/create', (req, res) => {
@@ -27,9 +28,27 @@ router.post('/store', (req, res) => {
             variety: req.body.variety,
             postId: post.id,
         };
+        var cover = req.files.cover; 
+        var imgOne = req.files.imgOne;
+        var imgTwo = req.files.imgTwo;
+        var imgThree = req.files.imgThree;
+        let photos = {
+            cover: cover.name,
+            imgOne: imgOne.name,
+            imgTwo: imgTwo.name,
+            imgThree: imgThree.name,
+            postId: post.id,
+        }
         kost.create(kostData).catch((error) => {
             console.log(error);
         });
+
+        photo.create(photos).then((data) =>{
+            cover.mv('/../photos/'+req.files.cover.name);
+            imgOne.mv('/../photos/'+req.files.imgOne.name);
+            imgTwo.mv('/../photos/'+req.files.imgTwo.name);
+            imgThree.mv('/../photos/'+req.files.imgThree.name);
+        })
 
         res.render('sites/post/index', { data: null });
     })

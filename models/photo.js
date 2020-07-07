@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 const sequelize = require('../configs/sequelize');
-const kost = require('./kost');
+const post = require('./post');
 
 // class photo
 class photo extends Sequelize.Model { }
@@ -13,12 +13,15 @@ photo.init(
             primaryKey: true,
             autoIncrement: true
         },
-        img: Sequelize.STRING,
+        cover: Sequelize.STRING,
+        imgOne: Sequelize.STRING,
+        imgTwo: Sequelize.STRING,
+        imgThree: Sequelize.STRING,
     },
     {
-        sequelize, modelName: 'post'
+        sequelize, modelName: 'photo'
     });
 
-module.exports = post;
+module.exports = photo;
 
-photo.belongsTo(kost);
+photo.belongsTo(post);

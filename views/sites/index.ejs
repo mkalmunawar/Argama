@@ -6,19 +6,19 @@
 <a class="nav-link" href="javascript:void(0)">
 
 </a>
-<% if (entries.length) { %>
+<% if (data.length) { %>
 <!-- melukakan iterasi terhada dapat entries -->
-<% entries.forEach(function(entry){ %>
+<% data.forEach(function(entry){ %>
 <div class="card">
     <!-- pemanggilan data image, title, caption dan seller -->
     <img class="card-img-top" src="<%= entry.image %> " alt="">
     <div class="card-body">
-        <h4 class="card-title"><%= entry.title %> </h4>
-        <p class="card-text"><%= entry.caption %> </p>
+        <h4 class="card-title"><%= entry.post.title %> </h4>
+        <p class="card-text"><%= entry.variety %> </p>
         <a name="" id="" class="btn btn-primary float-right" href="#" role="button">Lihat Item</a>
         <div class="text-muted">
             <i class="fa fa-user" aria-hidden="true">
-                Uploaded by,&nbsp;<%= entry.seller %>
+                Uploaded by,&nbsp;<%= entry.type %>
             </i>
         </div>
     </div>

@@ -1,5 +1,5 @@
 <%- include('../../partials/header'); %>
-<form action="/post/store" method="post">
+<form action="/post/store" method="post" encType="multipart/form-data">
     <div class="card">
         <div class="card-header">
             <div class="card-title">
@@ -37,13 +37,56 @@
                 <textarea class="form-control" name="facilities" id="" rows="3"></textarea>
             </div>
             <div class="form-group">
-              <label for="variety">Tipe Kost</label>
-              <select class="form-control" name="variety" id="">
-                <option>Kamar Mandi Dalam</option>
-                <option>Kamar Mandi Luar</option>
-              </select>
+                <label for="variety">Tipe Kost</label>
+                <select class="form-control" name="variety" id="">
+                    <option>Kamar Mandi Dalam</option>
+                    <option>Kamar Mandi Luar</option>
+                </select>
             </div>
-            <button type="submit" class="btn btn-primary float-right">Simpan Iklan</button>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <div class="card-title">
+                <h4>Gambar</h4>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="">Masukan Cover Photo</label>
+                        <input type="file" class="form-control-file" name="cover" id="" placeholder=""
+                            aria-describedby="fileHelpId">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label for="">Masukan Photo</label>
+                        <input type="file" class="form-control-file" name="imgOne" id="" placeholder=""
+                            aria-describedby="fileHelpId">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label for="">Masukan Photo</label>
+                        <input type="file" class="form-control-file" name="imgTwo" id="" placeholder=""
+                            aria-describedby="fileHelpId">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label for="">Masukan Photo</label>
+                        <input type="file" class="form-control-file" name="imgThree" id="" placeholder=""
+                            aria-describedby="fileHelpId">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <button type="submit" class="btn btn-primary float-right">Simpan Iklan</button>
+                </div>
+            </div>
         </div>
     </div>
 </form>
