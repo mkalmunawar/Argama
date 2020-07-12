@@ -28,7 +28,7 @@ router.post('/store', (req, res) => {
             variety: req.body.variety,
             postId: post.id,
         };
-        var cover = req.files.cover; 
+        var cover = req.files.cover;
         var imgOne = req.files.imgOne;
         var imgTwo = req.files.imgTwo;
         var imgThree = req.files.imgThree;
@@ -43,14 +43,14 @@ router.post('/store', (req, res) => {
             console.log(error);
         });
 
-        photo.create(photos).then((data) =>{
-            cover.mv('/../photos/'+req.files.cover.name);
-            imgOne.mv('/../photos/'+req.files.imgOne.name);
-            imgTwo.mv('/../photos/'+req.files.imgTwo.name);
-            imgThree.mv('/../photos/'+req.files.imgThree.name);
+        photo.create(photos).then((data) => {
+            cover.mv('./public/photos/' + '01' + req.files.cover.name);
+            imgOne.mv('./public/photos/' + '02' + req.files.imgOne.name);
+            imgTwo.mv('./public/photos/' + '03' + req.files.imgTwo.name);
+            imgThree.mv('./public/photos/' + '04' + req.files.imgThree.name);
         })
 
-        res.render('sites/post/index', { data: null });
+        res.redirect('/post/index');
     })
         .catch((error) => {
             console.log(error);
