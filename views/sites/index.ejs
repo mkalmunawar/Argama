@@ -11,10 +11,10 @@
 <% data.forEach(function(entry){ %>
 <div class="card">
     <!-- pemanggilan data image, title, caption dan seller -->
-    <img class="card-img-top" src="<%= entry.image %> " alt="">
+    <img class="card-img-top" src="/../photos/<%= entry.photo.cover %>" alt="">
     <div class="card-body">
-        <h4 class="card-title"><%= entry.post.title %> </h4>
-        <p class="card-text"><%= entry.variety %> </p>
+        <h4 class="card-title"><%= entry.title %> </h4>
+        <p class="card-text"><%= entry.kost.variety %> </p>
         <a name="" id="" class="btn btn-primary float-right" href="#" role="button">Lihat Item</a>
         <div class="text-muted">
             <i class="fa fa-user" aria-hidden="true">

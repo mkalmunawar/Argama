@@ -27,3 +27,4 @@ kost.init(
 module.exports = kost;
 
 kost.belongsTo(post);
+post.hasOne(kost);

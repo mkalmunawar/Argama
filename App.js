@@ -36,7 +36,12 @@ app.use('/post', PostRoutes);
 
 app.get('/', (req, res) => {
     //entries merupakan array yang nanti akan dikirimkan datanya ke route '/'
-    kost.findAll({include: post}).then((post) => {
+    post.findAll({
+        include: [
+            { model: kost },
+            { model: photo }
+        ]
+    }).then((post) => {
         let data = post;
         console.log(data)
         res.render('sites/index', { data: data });

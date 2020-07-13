@@ -25,3 +25,4 @@ photo.init(
 module.exports = photo;
 
 photo.belongsTo(post);
+post.hasOne(photo);
