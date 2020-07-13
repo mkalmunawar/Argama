@@ -69,13 +69,18 @@ router.get('/index', (req, res) => {
 
 router.get('/show/:id', (request, response) => {
     let id = request.params.id;
-    User.findAll({
+    post.findOne({
         where: {
             id: id,
-        }
-    }).then((user) => {
-        let data = user;
-        response.render('sites/user/show', { data: data });
+        },
+        include: [
+            { model: kost },
+            { model: photo }
+        ]
+    }).then((post) => {
+        let data = post;
+        console.log(data);
+        response.render('sites/post/show', { data: data });
     })
         .catch((error) => {
             console.log(error);
