@@ -55,40 +55,18 @@
         <div class="card-body">
             <div class="row">
                 <div class="col">
-                    <div class="form-group">
-                        <label for="">Masukan Cover Photo</label>
-                        <input type="file" class="form-control-file" name="cover" id="" placeholder=""
-                            aria-describedby="fileHelpId">
-                    </div>
+                    <img class="card-img-top" src="/../photos/<%= data.photo.cover %>" alt="">
                 </div>
                 <div class="col">
-                    <div class="form-group">
-                        <label for="">Masukan Photo</label>
-                        <input type="file" class="form-control-file" name="imgOne" id="" placeholder=""
-                            aria-describedby="fileHelpId">
-                    </div>
+                    <img class="card-img-top" src="/../photos/<%= data.photo.imgOne %>" alt="">
                 </div>
                 <div class="col">
-                    <div class="form-group">
-                        <label for="">Masukan Photo</label>
-                        <input type="file" class="form-control-file" name="imgTwo" id="" placeholder=""
-                            aria-describedby="fileHelpId">
-                    </div>
+                    <img class="card-img-top" src="/../photos/<%= data.photo.imgTwo %>" alt="">
                 </div>
                 <div class="col">
-                    <div class="form-group">
-                        <label for="">Masukan Photo</label>
-                        <input type="file" class="form-control-file" name="imgThree" id="" placeholder=""
-                            aria-describedby="fileHelpId">
-                    </div>
+                    <img class="card-img-top" src="/../photos/<%= data.photo.imgThree %>" alt="">
                 </div>
             </div>
-            <div class="row">
-                <div class="col">
-                    <button type="submit" class="btn btn-primary float-right">Simpan Iklan</button>
-                </div>
-            </div>
-        </div>
     </div>
 </form>
 <% } %>

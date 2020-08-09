@@ -18,7 +18,11 @@
                 <tr>
                     <td><%= no++ %> </td>
                     <td><%= post.title %> </td>
-                    <td><a class="btn btn-primary" href="/post/show/<%= post.id %>" role="button">Detail</a></td>
+                    <td>
+                        <a class="btn btn-primary" href="/post/show/<%= post.id %>" role="button">Detail</a>
+                        <a class="btn btn-primary" href="/post/edit/<%= post.id %>" role="button">Ubah</a>
+                        <a class="btn btn-primary" href="/post/destroy/<%= post.id %>" role="button">Hapus Iklan</a>
+                    </td>
                 </tr>
                 <% }) %>
             <% } %>

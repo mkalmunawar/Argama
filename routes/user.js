@@ -26,6 +26,7 @@ router.post('/create', (req, res) => {
         })
 });
 
+// menamplikan seluruh data pada table user
 router.get('/find', (req, res) => {
     User.findAll().then((user) => {
         let data = user;
@@ -36,6 +37,7 @@ router.get('/find', (req, res) => {
         })
 })
 
+// menampilkan detail user
 router.get('/show/:id', (request, response) => {
     let id = request.params.id;
     User.findAll({
